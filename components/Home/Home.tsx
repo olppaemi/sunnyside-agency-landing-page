@@ -1,4 +1,4 @@
-import { Header } from "../Header/styles";
+import { Header } from "../Header";
 
 export const Home = () => {
   return (
