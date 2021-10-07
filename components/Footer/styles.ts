@@ -53,7 +53,7 @@ export const SNSContainer = styled.div`
   justify-content: center;
 `;
 
-export const SNSGroup = styled.ul`
+export const SNSGroup = styled.div`
   & > * + * {
     margin-left: ${rem(28)};
   }
