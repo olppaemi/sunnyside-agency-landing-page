@@ -6,9 +6,9 @@ export const theme: DefaultTheme = {
     accent: "Fraunces",
   },
   palette: {
-    soft_red: "hsl(7, 99%, 70%)",
+    red: "hsl(7, 99%, 70%)",
     yellow: "hsl(51, 100%, 49%)",
-    dark_desaturated_cyan: "hsl(167, 40%, 24%)",
+    dark_cyan: "hsl(167, 40%, 24%)",
     dark_blue: "hsl(198, 62%, 26%)",
     dark_moderate_cyan: "hsl(168, 34%, 41%)",
     very_dark_desaturated_blue: "hsl(212, 27%, 19%)",

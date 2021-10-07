@@ -8,10 +8,6 @@ export const Header = styled.header`
   background: center / cover no-repeat url(/images/desktop/image-header.jpg);
   padding-top: ${rem(34)};
 
-  .menu {
-    cursor: pointer;
-  }
-
   @media (max-width: ${media.md}) {
     height: ${rem(538)};
     padding-top: ${rem(32)};
@@ -29,7 +25,7 @@ export const NavBar = styled.div`
   align-items: center;
 
   @media (max-width: ${media.md}) {
-    padding: 0 6%;
+    padding: 0 ${rem(24)};
   }
 `;
 
@@ -44,13 +40,14 @@ export const Nav = styled.nav<NavProps>`
   @media (max-width: ${media.md}) {
     position: absolute;
     top: 0;
-    left: 6%;
+    left: ${({ $showMenu }) => ($showMenu ? "6%" : "-100%")};
     right: 6%;
     transform: translateY(${rem(106)});
     width: 87.73%;
     height: ${rem(329)};
     background-color: ${({ theme }) => theme.palette.white};
     opacity: ${({ $showMenu }) => ($showMenu ? "1" : "0")};
+    transition: opacity 3ms ease-in;
 
     &::before {
       display: block;
@@ -118,4 +115,31 @@ export const NavItem = styled.li<{ $accent?: boolean }>`
         background-color: ${theme.palette.yellow};
       }
     `}
+`;
+
+export const HamburgerIcon = styled.div`
+  cursor: pointer;
+`;
+
+export const Title = styled.h1`
+  font-family: ${({ theme }) => theme.fonts.accent};
+  font-size: ${rem(56)};
+  color: ${({ theme }) => theme.palette.white};
+  text-align: center;
+  margin-top: ${rem(105)};
+  letter-spacing: ${rem(8.75)};
+
+  @media (max-width: ${media.md}) {
+    font-size: ${rem(40)};
+    margin-top: ${rem(88)};
+  }
+`;
+
+export const ArrowIcon = styled.div`
+  text-align: center;
+  margin-top: ${rem(96.54)};
+
+  @media (max-width: ${media.md}) {
+    margin-top: ${rem(52)};
+  }
 `;

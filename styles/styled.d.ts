@@ -7,9 +7,9 @@ declare module "styled-components" {
       accent: string;
     };
     palette: {
-      soft_red: string;
+      red: string;
       yellow: string;
-      dark_desaturated_cyan: string;
+      dark_cyan: string;
       dark_blue: string;
       dark_moderate_cyan: string;
       very_dark_desaturated_blue: string;

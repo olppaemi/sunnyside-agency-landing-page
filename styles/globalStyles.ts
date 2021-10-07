@@ -21,7 +21,9 @@ const globalStyle = css`
   }
 
   a:hover,
-  a:active {
+  a:active,
+  a:visited {
+    color: initial;
     text-decoration: none;
   }
 `;
