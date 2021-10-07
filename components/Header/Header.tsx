@@ -5,14 +5,19 @@ import { Logo } from "../icons/Logo";
 import * as S from "./styles";
 
 export const Header = () => {
-  const [hamburger, setHamburger] = useState(false);
+  const [menu, setMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   const showHamburger = () => {
     if (window.innerWidth <= 768) {
-      setHamburger(true);
+      setMenu(true);
     } else {
-      setHamburger(false);
+      setMenu(false);
     }
+  };
+
+  const toggleShowMenu = () => {
+    setShowMenu(!showMenu);
   };
 
   useEffect(() => {
@@ -28,8 +33,9 @@ export const Header = () => {
             <Logo />
           </a>
         </Link>
-        <S.Nav>
-          <S.NavLinks>
+
+        <S.Nav $showMenu={showMenu}>
+          <S.NavMenu>
             <S.NavItem>
               <Link href="/">
                 <a>About</a>
@@ -50,9 +56,10 @@ export const Header = () => {
                 <a>Contact</a>
               </Link>
             </S.NavItem>
-          </S.NavLinks>
+          </S.NavMenu>
         </S.Nav>
-        {hamburger && <Hamburger />}
+
+        {menu && <Hamburger onClick={toggleShowMenu} className="menu" />}
       </S.NavBar>
     </S.Header>
   );

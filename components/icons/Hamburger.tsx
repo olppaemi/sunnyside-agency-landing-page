@@ -1,6 +1,8 @@
-export const Hamburger = () => {
+import { SVGAttributes } from "react";
+
+export const Hamburger = ({ ...props }: SVGAttributes<SVGElement>) => {
   return (
-    <svg width="24" height="18" xmlns="http://www.w3.org/2000/svg">
+    <svg width="24" height="18" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
         d="M24 16v2H0v-2h24zm0-8v2H0V8h24zm0-8v2H0V0h24z"
         fill="#FFF"

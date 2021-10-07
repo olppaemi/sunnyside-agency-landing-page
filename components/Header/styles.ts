@@ -8,9 +8,15 @@ export const Header = styled.header`
   background: center / cover no-repeat url(/images/desktop/image-header.jpg);
   padding-top: ${rem(34)};
 
-  ${media.lessThan("md")`
-  padding-top: ${rem(32)};
-  `}
+  .menu {
+    cursor: pointer;
+  }
+
+  @media (max-width: ${media.md}) {
+    height: ${rem(538)};
+    padding-top: ${rem(32)};
+    background: center / cover no-repeat url(/images/mobile/image-header.jpg);
+  }
 `;
 
 export const NavBar = styled.div`
@@ -22,38 +28,43 @@ export const NavBar = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  ${media.lessThan("md")`
+  @media (max-width: ${media.md}) {
     padding: 0 6%;
-  `}
+  }
 `;
 
-export const Nav = styled.nav`
+type NavProps = {
+  $showMenu: boolean;
+};
+
+export const Nav = styled.nav<NavProps>`
   height: 100%;
   position: relative;
 
-  ${media.lessThan("md")`
+  @media (max-width: ${media.md}) {
     position: absolute;
-    top: 0; 
+    top: 0;
     left: 6%;
     right: 6%;
     transform: translateY(${rem(106)});
     width: 87.73%;
     height: ${rem(329)};
     background-color: ${({ theme }) => theme.palette.white};
+    opacity: ${({ $showMenu }) => ($showMenu ? "1" : "0")};
 
     &::before {
       display: block;
-      content: "";      
+      content: "";
       border: ${rem(24)} solid;
       border-color: transparent white transparent transparent;
       position: absolute;
       top: -${rem(24)};
-      right: 0;      
+      right: 0;
     }
-  `}
+  }
 `;
 
-export const NavLinks = styled.ul`
+export const NavMenu = styled.ul`
   height: 100%;
   display: flex;
 
@@ -61,7 +72,7 @@ export const NavLinks = styled.ul`
     margin-left: ${rem(47)};
   }
 
-  ${media.lessThan("md")`
+  @media (max-width: ${media.md}) {
     padding: ${rem(39)} 0;
     flex-direction: column;
     justify-content: space-between;
@@ -69,7 +80,7 @@ export const NavLinks = styled.ul`
     & > * + * {
       margin-left: 0;
     }
-  `}
+  }
 `;
 
 export const NavItem = styled.li<{ $accent?: boolean }>`
@@ -80,10 +91,11 @@ export const NavItem = styled.li<{ $accent?: boolean }>`
   a {
     font-size: ${rem(18)};
     color: ${({ theme }) => theme.palette.white};
-    ${media.lessThan("md")`
+
+    @media (max-width: ${media.md}) {
       font-size: ${rem(20)};
       color: ${({ theme }) => theme.palette.dark_grayish_blue};
-    `}
+    }
   }
 
   ${({ $accent, theme }) =>
@@ -100,10 +112,10 @@ export const NavItem = styled.li<{ $accent?: boolean }>`
         color: ${theme.palette.very_dark_desaturated_blue};
       }
 
-      ${media.lessThan("md")`
+      @media (max-width: ${media.md}) {
         width: ${rem(140)};
         height: ${rem(56)};
         background-color: ${theme.palette.yellow};
-      `}
+      }
     `}
 `;

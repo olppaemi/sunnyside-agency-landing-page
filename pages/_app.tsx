@@ -13,9 +13,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Center>
-          <Component {...pageProps} />
-        </Center>
+        <Component {...pageProps} />
       </ThemeProvider>
     </>
   );
