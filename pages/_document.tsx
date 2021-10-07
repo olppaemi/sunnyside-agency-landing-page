@@ -44,8 +44,6 @@ export default class MyDocument extends Document {
             sizes="32x32"
             href="./images/favicon-32x32.png"
           />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap"
             rel="stylesheet"
