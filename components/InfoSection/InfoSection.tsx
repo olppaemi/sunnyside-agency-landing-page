@@ -22,10 +22,10 @@ export const InfoSection = ({
         <S.Content>
           <h2>{title}</h2>
           <p>{text}</p>
-          <Link href="/" passHref>
-            <div>
+          <Link href="/">
+            <a>
               <S.More $color={color}>LEARN MORE</S.More>
-            </div>
+            </a>
           </Link>
         </S.Content>
       </S.Section>

@@ -23,7 +23,6 @@ export const Section = styled.section`
   @media (max-width: ${media.md}) {
     width: 100%;
     height: 58%;
-    text-align: center;
   }
 `;
 
@@ -58,7 +57,8 @@ export const Content = styled.div`
   }
 `;
 
-export const More = styled.a<{ $color: "red" | "yellow" }>`
+export const More = styled.div<{ $color: "red" | "yellow" }>`
+  display: inline-block;
   font-family: ${({ theme }) => theme.fonts.accent};
   font-size: ${rem(15)};
   position: relative;
