@@ -14,7 +14,14 @@ export const Container = styled.div`
   }
 `;
 
-export const Wrapper = styled.div`
+export const Picture = styled.div<{ $src: string }>`
   width: 100%;
   height: 100%;
+  background: ${({ $src }) =>
+    `center / cover no-repeat url(/images/desktop/${$src})`};
+
+  @media (max-width: ${media.md}) {
+    background: ${({ $src }) =>
+      `center / cover no-repeat url(/images/mobile/${$src})`};
+  }
 `;
