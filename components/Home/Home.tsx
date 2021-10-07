@@ -1,3 +1,4 @@
+import { Gallery } from "../Gallery";
 import { Header } from "../Header";
 import { InfoSection } from "../InfoSection";
 import { InfoSection2 } from "../InfoSection2";
@@ -24,6 +25,7 @@ export const Home = () => {
         />
         <InfoSection2 />
         <Testimonials />
+        <Gallery />
       </main>
     </>
   );
