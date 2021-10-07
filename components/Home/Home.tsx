@@ -1,6 +1,7 @@
 import { Header } from "../Header";
 import { InfoSection } from "../InfoSection";
 import { InfoSection2 } from "../InfoSection2";
+import { Testimonials } from "../Testimonials";
 
 export const Home = () => {
   return (
@@ -22,6 +23,7 @@ export const Home = () => {
           reverse
         />
         <InfoSection2 />
+        <Testimonials />
       </main>
     </>
   );
